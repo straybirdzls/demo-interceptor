@@ -2,7 +2,7 @@
  * Alipay.com Inc.
  * Copyright (c) 2004-2019 All Rights Reserved.
  */
-package com.alipay.sofa.boot.demo1.Facade;
+package com.alipay.sofa.boot.Facade;
 
 /**
  *

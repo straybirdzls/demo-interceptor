@@ -3,11 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="priorityOrderedBeanPostProcessor" class="com.alipay.sofa.boot.demo1.bean.PriorityOrderedBeanPostProcessor" />
-
-    <bean id="orderedBeanPostProcessor" class="com.alipay.sofa.boot.demo1.bean.OrderedBeanPostProcessor" />
-
-    <bean id="normalBeanPostProcessor" class="com.alipay.sofa.boot.demo1.bean.NormalBeanPostProcessor" />
+    <bean id="testBean" class="com.alipay.sofa.boot.demo2.bean.TestBean" />
 
     <bean id="logInterceptor" class="com.alipay.sofa.boot.interceptor.LogInterceptor" />
 
@@ -17,15 +13,12 @@
                 <value>logInterceptor</value>
             </list>
         </property>
-        <property name="beanNames">
-            <list>
-                <value>priorityOrderedBeanPostProcessor</value>
-                <value>orderedBeanPostProcessor</value>
-                <value>normalBeanPostProcessor</value>
-            </list>
-        </property>
+        <property name="beanNames" value="testBean" />
     </bean>
 
-
+    <!-- remove this, then interceptor will work -->
+    <bean id="testBeanFactoryPostProcessor" class="com.alipay.sofa.boot.demo2.bean.TestBeanFactoryPostProcessor" >
+        <property name="testFacade" ref="testBean" />
+    </bean>
 
 </beans>

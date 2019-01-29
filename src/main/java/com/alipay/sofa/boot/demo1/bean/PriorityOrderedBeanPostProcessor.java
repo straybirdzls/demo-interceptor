@@ -4,7 +4,7 @@
  */
 package com.alipay.sofa.boot.demo1.bean;
 
-import com.alipay.sofa.boot.demo1.Facade.TestFacade;
+import com.alipay.sofa.boot.Facade.TestFacade;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.PriorityOrdered;

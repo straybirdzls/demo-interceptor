@@ -2,7 +2,7 @@
  * Alipay.com Inc.
  * Copyright (c) 2004-2019 All Rights Reserved.
  */
-package com.alipay.sofa.boot.demo1.interceptor;
+package com.alipay.sofa.boot.interceptor;
 
 import org.springframework.aop.MethodBeforeAdvice;
 
