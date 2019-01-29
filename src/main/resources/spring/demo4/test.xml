@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="testBean" class="com.alipay.sofa.boot.impl.TestBean" />
+
+    <bean id="logInterceptor" class="com.alipay.sofa.boot.interceptor.LogInterceptor" />
+
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="interceptorNames">
+            <list>
+                <value>logInterceptor</value>
+            </list>
+        </property>
+        <property name="beanNames" value="testBean" />
+    </bean>
+
+     <!-- remove this, then interceptor will work -->
+    <bean class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces" value="com.alipay.sofa.boot.Facade.TestFacade" />
+        <property name="target" ref="testBean" />
+    </bean>
+
+</beans>
