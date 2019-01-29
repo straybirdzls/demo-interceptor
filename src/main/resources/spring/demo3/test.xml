@@ -16,8 +16,8 @@
         <property name="beanNames" value="testBean" />
     </bean>
 
-    <!-- remove this, then interceptor will work -->
-    <bean id="testBeanFactoryPostProcessor" class="com.alipay.sofa.boot.demo2.bean.TestBeanFactoryPostProcessor" >
+     <!-- remove this, then interceptor will work -->
+    <bean id="testFactoryBean" class="com.alipay.sofa.boot.demo3.bean.TestFactoryBean">
         <property name="testFacade" ref="testBean" />
     </bean>
 
